@@ -22,10 +22,10 @@
           placeholder="password..."
         />
       </div>
-      <router-link to="/home">
-        <button class="btn btn-primary my-5 text-center px-5 py-2" type="submit">Log In</button>
-      </router-link>
+      <p>{{this.message}}</p>
+      <button @click.prevent="userLogin" class="btn btn-primary my-5 text-center px-5 py-2">Log In</button>
     </form>
+
     <p>
       New User?
       <router-link to="/signup">Sign up</router-link>
@@ -36,7 +36,31 @@
 <script>
 export default {
   data() {
-    return { username: "", password: "" };
+    return { username: "", password: "", message: "" };
+  },
+  methods: {
+    userLogin() {
+      let url = "/server/admin/admin_login.php";
+
+      let formData = new FormData();
+
+      formData.append("user_name", this.username);
+      formData.append("user_pass", this.password);
+
+      fetch(url, {
+        method: "POST",
+        body: formData
+      })
+        .then(res => res.json())
+        .then(data => {
+          this.message = data;
+
+          if (data === "Login success") {
+            window.location.href = "home";
+          }
+        })
+        .catch(err => console.log(err));
+    }
   }
 };
 </script>
