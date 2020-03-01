@@ -19,12 +19,11 @@ export default {
     };
   },
 
-  mounted() {
+  created() {
     fetch("/server")
       .then(res => res.json())
       .then(data => (this.movies = data.movies));
-  },
-  methods: {}
+  }
 };
 </script>
 

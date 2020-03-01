@@ -19,11 +19,12 @@ if (isset($_GET['filter'])) {
 
 $jsonResponse = array('movies' => array());
 $counter = 0;
-while (($row = $getMovies->fetch(PDO::FETCH_ASSOC)) && ($counter < 5)) {
+while (($row = $getMovies->fetch(PDO::FETCH_ASSOC))) {
     $jsonRow = array(
-        'movies_id' => $row['movies_id'],
-        'movies_cover' => $row['movies_cover'],
-        'movies_title' => $row['movies_title']
+        'movie_id' => $row['movie_id'],
+        'movie_cover' => $row['movie_poster'],
+        'movie_title' => $row['movie_name'],
+        'movie_year' => $row['movie_year']
     );
     $counter++;
     array_push($jsonResponse['movies'], $jsonRow);
