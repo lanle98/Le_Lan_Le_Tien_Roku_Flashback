@@ -11,29 +11,22 @@
     </nav>
     <div class="jumbotron">
       <!-- Additional required wrapper -->
-      <swiper ref="mySwiper">
-        <!-- slides -->
-        <swiper-slide>I'm Slide 1</swiper-slide>
-        <swiper-slide>I'm Slide 2</swiper-slide>
-        <swiper-slide>I'm Slide 3</swiper-slide>
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">slide 1</div>
+          <div class="swiper-slide">slide 2</div>
+          <div class="swiper-slide">slide 3</div>
+        </div>
+      </div>
 
-        <!-- Optional controls -->
-
-        <div class="swiper-button-prev" @click="this.buttonPrev" slot="button-prev"></div>
-        <div class="swiper-button-next" @click="this.buttonNext" slot="button-next"></div>
-      </swiper>
+      <div @click="this.buttonPrev" class="btn-next">-</div>
+      <div @click="this.buttonNext" class="btn-prev">+</div>
     </div>
   </header>
 </template>
 
 <script>
-import "swiper/dist/css/swiper.css";
-import { swiper, swiperSlide } from "vue-awesome-swiper";
-
-//declare variables
-
 export default {
-  components: { swiper, swiperSlide },
   data() {
     return {
       index: 0
@@ -72,25 +65,20 @@ export default {
   position: relative;
 }
 
-.swiper-wrapper {
-  display: flex;
-  width: 300%;
+.swiper-container {
+  width: 100%;
+  overflow: hidden;
 }
 
 .swiper-slide {
   width: 100%;
-  height: 300px;
+  overflow: hidden;
 }
 
-.swiper-button-prev {
-  position: absolute;
-  left: 0;
-  top: 50%;
-}
-
-.swiper-button-next {
-  position: absolute;
-  right: 0;
-  top: 50%;
+.swiper-wrapper {
+  display: flex;
+  background: blue;
+  width: 300%;
+  transition: 0.5s !important;
 }
 </style>
