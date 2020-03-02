@@ -1,9 +1,9 @@
 <template>
-  <div class="container-fluid row">
+  <div class="container-fluid row p-0 m-0">
     <Sidebar class="col-md-2" />
-    <div class="main col-md-10">
+    <div class="main col-md-10 p-0">
       <Nav />
-      <Header class="col" />
+      <Header />
       <Container :musics="musics" :tvshows="tvshows" :movies="movies" />
     </div>
   </div>

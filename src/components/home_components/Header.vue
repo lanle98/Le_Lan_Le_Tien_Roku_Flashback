@@ -2,18 +2,24 @@
 
 <template>
   <header>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid p-0">
       <!-- Additional required wrapper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">slide 1</div>
+          <div class="swiper-slide">
+            <img class="img-fluid" src="images/hero.jpg" alt="hero" />
+          </div>
           <div class="swiper-slide">slide 2</div>
           <div class="swiper-slide">slide 3</div>
         </div>
       </div>
 
-      <div @click="this.buttonPrev" class="btn-next">-</div>
-      <div @click="this.buttonNext" class="btn-prev">+</div>
+      <div @click="this.buttonNext" class="btn-next">
+        <i class="fas fa-angle-right"></i>
+      </div>
+      <div @click="this.buttonPrev" class="btn-prev">
+        <i class="fas fa-angle-left"></i>
+      </div>
     </div>
   </header>
 </template>

@@ -1,0 +1,21 @@
+.jumbotron{
+    background: none;
+
+    i{
+        color: $white;
+        font-size: 3rem;
+        cursor: pointer;
+    }
+
+    .btn-prev{
+        position: absolute;
+        left: 5%;
+        top: 50%;
+    }
+
+    .btn-next{
+        position: absolute;
+        right: 10%;
+        top: 50%;
+    }
+}
