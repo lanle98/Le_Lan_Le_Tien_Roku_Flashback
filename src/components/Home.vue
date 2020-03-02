@@ -1,28 +1,40 @@
 <template>
   <div class="container">
     <Header />
-    <Movies :movies="movies" />
+    <Container :musics="musics" :tvshows="tvshows" :movies="movies" />
   </div>
 </template>
 
 <script>
 import Header from "./home_components/Header";
-import Movies from "./home_components/Movies";
+import Container from "./home_components/Container";
 
 export default {
   name: "app",
-  components: { Movies, Header },
+  components: { Container, Header },
   data() {
     return {
-      page: null,
-      movies: {}
+      movies: {},
+      musics: {},
+      tvshows: {}
     };
   },
 
   created() {
-    fetch("/server")
+    fetch("server/?categories=movie")
       .then(res => res.json())
-      .then(data => (this.movies = data.movies));
+      .then(data => (this.movies = data.list))
+      .catch(err => console.log(err));
+
+    fetch("server/?categories=music")
+      .then(res => res.json())
+      .then(data => (this.musics = data.list))
+      .catch(err => console.log(err));
+
+    fetch("server/?categories=tv")
+      .then(res => res.json())
+      .then(data => (this.tvshows = data.list))
+      .catch(err => console.log(err));
   }
 };
 </script>
