@@ -1,6 +1,7 @@
 <template>
   <div class="container">
     <Header />
+    <Nav />
     <Container :musics="musics" :tvshows="tvshows" :movies="movies" />
   </div>
 </template>
