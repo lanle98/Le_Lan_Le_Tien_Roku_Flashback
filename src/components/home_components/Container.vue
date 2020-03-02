@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-fluid">
     <section class="popular justify-content-center row m-5">
       <h2 class="col-12 text-left">Popular</h2>
       <div class="movies col-md-4 col-12 p-0" :key="movie.id" v-for="movie in movies.slice(0,3)">

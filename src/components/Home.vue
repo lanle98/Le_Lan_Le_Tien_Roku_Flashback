@@ -1,18 +1,22 @@
 <template>
-  <div class="container">
-    <Header />
-    <Nav />
-    <Container :musics="musics" :tvshows="tvshows" :movies="movies" />
+  <div class="container-fluid row">
+    <Sidebar class="col-md-2" />
+    <div class="main col-md-10">
+      <Nav />
+      <Header class="col" />
+      <Container :musics="musics" :tvshows="tvshows" :movies="movies" />
+    </div>
   </div>
 </template>
 
 <script>
 import Header from "./home_components/Header";
 import Container from "./home_components/Container";
+import Sidebar from "./home_components/Sidebar";
 
 export default {
   name: "app",
-  components: { Container, Header },
+  components: { Container, Header, Sidebar },
   data() {
     return {
       movies: {},
@@ -47,7 +51,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 0;
 }
 li {
   list-style-type: none;

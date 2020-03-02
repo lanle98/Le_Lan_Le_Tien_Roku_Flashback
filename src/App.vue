@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="container">
+  <div id="app">
     <transition
       name="route-animation"
       enter-active-class="animated bounceInLeft"

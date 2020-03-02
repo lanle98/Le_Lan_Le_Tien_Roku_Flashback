@@ -1,20 +1,13 @@
+@import './modules/vars';
+@import './modules/home';
+@import './modules/sidebar';
+
 body{
     background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(17,1,36,1) 40%, rgba(34,2,70,1) 100%);
+    position: relative;
 }
 
 h1,h2,p{
-    color: white;
+    color: $white;
 }
 
-
-
-img{
-    height: 250px !important;
-    object-fit: cover;
-}
-
-.popular{
-    img{
-        height: 500px !important;
-    }
-}

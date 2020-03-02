@@ -2,14 +2,7 @@
 
 <template>
   <header>
-    <nav>
-      <ul class="row justify-content-around p-0 mx-0">
-        <li>Home</li>
-        <li>Movies</li>
-        <li>TV</li>
-      </ul>
-    </nav>
-    <div class="jumbotron">
+    <div class="jumbotron jumbotron-fluid">
       <!-- Additional required wrapper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
