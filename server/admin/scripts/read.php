@@ -18,11 +18,24 @@ function getAll($tbl)
 }
 
 
-function getMovies($tbl)
+function getMovies($tbl, $type)
 {
     $pdo = Database::getInstance()->getConnection();
 
-    $queryAll = 'SELECT * FROM ' . $tbl;
+    $queryAll = "SELECT * FROM  $tbl WHERE movie_type = '$type'";
+    $results = $pdo->query($queryAll);
+    if ($results) {
+        return $results;
+    } else {
+        return 'There was a problem accessing this info';
+    }
+};
+
+function getMusics($tbl, $type)
+{
+    $pdo = Database::getInstance()->getConnection();
+
+    $queryAll = "SELECT * FROM  $tbl WHERE music_type = '$type'";
     $results = $pdo->query($queryAll);
 
     if ($results) {
@@ -32,25 +45,11 @@ function getMovies($tbl)
     }
 };
 
-function getMusics($tbl)
+function getTVs($tbl, $type)
 {
     $pdo = Database::getInstance()->getConnection();
 
-    $queryAll = 'SELECT * FROM ' . $tbl;
-    $results = $pdo->query($queryAll);
-
-    if ($results) {
-        return $results;
-    } else {
-        return 'There was a problem accessing this info';
-    }
-};
-
-function getTVs($tbl)
-{
-    $pdo = Database::getInstance()->getConnection();
-
-    $queryAll = 'SELECT * FROM ' . $tbl;
+    $queryAll = "SELECT * FROM  $tbl WHERE tv_type = '$type'";
     $results = $pdo->query($queryAll);
 
     if ($results) {

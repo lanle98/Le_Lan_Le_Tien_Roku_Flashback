@@ -2,12 +2,29 @@
 
 <template>
   <header>
-    <div class="jumbotron jumbotron-fluid p-0">
+    <nav class="search-nav navbar navbar-light justify-content-end p-5">
+      <div class="search-form px-5 d-flex align-items-center">
+        <i class="fas fa-search"></i>
+      </div>
+
+      <div class="user-switch row">
+        <div
+          @click="switchType('parents')"
+          class="p-2 m-2 h6"
+          :class="{'active':user == 'parents'}"
+        >PARENTS</div>
+        <div @click="switchType('kids')" class="p-2 m-2 h6" :class="{'active':user == 'kids'}">KIDS</div>
+      </div>
+    </nav>
+    <div class="jumbotron p-0">
       <!-- Additional required wrapper -->
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <img class="img-fluid" src="images/hero.jpg" alt="hero" />
+          <div class="swiper-slide" v-if="user == 'parents'">
+            <img class="img-fluid" src="images/hero_parents.jpg" alt="hero" />
+          </div>
+          <div class="swiper-slide" v-if="user == 'kids'">
+            <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
           </div>
           <div class="swiper-slide">slide 2</div>
           <div class="swiper-slide">slide 3</div>
@@ -31,6 +48,7 @@ export default {
       index: 0
     };
   },
+  props: ["user"],
   methods: {
     buttonPrev() {
       if (this.index <= 2 && this.index > 0) {
@@ -53,31 +71,14 @@ export default {
       console.log(sliderOffset);
 
       swiperWrapper.style.transform = `translateX(-${sliderOffset}px)`;
+    },
+    switchType(user) {
+      console.log(user);
+      this.$emit("switchType", user);
     }
   }
 };
 </script>
 
 <style scoped>
-.jumbotron {
-  overflow: hidden;
-  position: relative;
-}
-
-.swiper-container {
-  width: 100%;
-  overflow: hidden;
-}
-
-.swiper-slide {
-  width: 100%;
-  overflow: hidden;
-}
-
-.swiper-wrapper {
-  display: flex;
-  background: blue;
-  width: 300%;
-  transition: 0.5s !important;
-}
 </style>

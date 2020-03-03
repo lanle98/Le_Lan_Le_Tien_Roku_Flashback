@@ -1,0 +1,45 @@
+.login-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .input {
+        border-bottom: 1px solid $purple;
+        background: none;
+        position: relative;
+      }
+      .input input {
+        border: none;
+        background: none !important;
+        color: $white;
+        outline: none;
+        left: 0;
+      }
+      
+      i {
+        position: absolute;
+      }
+      
+     
+      button {
+        border-radius: 40px !important;
+        background: rgba($color: $purple, $alpha: 0.5);
+        font-size: .8rem;
+        border: none;
+      }
+      li {
+        list-style-type: none;
+      } /*# sourceMappingURL=main.css.map */
+}
+
+@media only screen and (min-width: 768px){
+   .login-page{
+       .logo{
+           width: 30%;
+       }
+       .input{
+           width: 40%;
+           text-align: center;
+           margin: auto;
+       }
+   }
+}

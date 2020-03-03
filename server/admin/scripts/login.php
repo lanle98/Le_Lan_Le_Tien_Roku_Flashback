@@ -49,3 +49,17 @@ function login($username, $password, $ip)
     //check if match
 
 }
+
+function getAllUsers()
+{
+    $pdo = Database::getInstance()->getConnection();
+
+    $get_users_query = "SELECT * FROM tbl_user";
+    $results = $pdo->query($get_users_query);
+
+    if ($results) {
+        return $results;
+    } else {
+        'There is no user';
+    }
+}
