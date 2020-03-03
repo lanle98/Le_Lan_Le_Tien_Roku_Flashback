@@ -6,7 +6,7 @@
       leave-active-class="animated bounceOutRight"
     >
       <Home v-if="status" :userInfo="userInfo" :key="userInfo.name" />
-      <UserSelections @userInfo="getUserInfo" :key="2" />
+      <UserSelections v-else @userInfo="getUserInfo" :key="2" />
     </transition-group>
   </div>
 </template>
