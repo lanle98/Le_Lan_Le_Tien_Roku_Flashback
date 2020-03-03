@@ -1,0 +1,74 @@
+
+.search-nav{
+  background: none;
+
+  .input-group-text{
+    background: none;
+    border: none;
+  }
+
+
+  input{
+    background: none;
+    border: none;
+
+    &:focus{
+      background: none;
+      outline: none;
+    }
+  }
+
+  .user-switch{
+    cursor: pointer;
+      .active{
+        border: 1px solid $gold;
+        color: $gold;
+        transition: .5s;
+      }
+  }
+}
+
+.jumbotron{
+
+    
+        // overflow: hidden;
+        position: relative;
+        background: none;
+        width: 100%;
+      
+      
+      .swiper-container {
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .swiper-slide {
+        width: 100%;
+        overflow: hidden;
+      }
+      
+      .swiper-wrapper {
+        display: flex;
+        background: blue;
+        width: 300%;
+        transition: 0.5s !important;
+      }
+    
+
+    i{
+        font-size: 3rem;
+        cursor: pointer;
+    }
+
+    .btn-prev{
+        position: absolute;
+        left: 5%;
+        top: 50%;
+    }
+
+    .btn-next{
+        position: absolute;
+        right: 8%;
+        top: 50%;
+    }
+}

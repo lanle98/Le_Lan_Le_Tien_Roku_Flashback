@@ -1,0 +1,15 @@
+.user-selections{
+    cursor: pointer;
+    .user-avatar{
+        img{
+            background: rgba($color: $purple, $alpha: .3) ;
+            border-radius: 100%;
+            padding: 1rem;
+            transition: .5s;
+        }
+
+        &:hover img{
+            background: rgba($color: $purple, $alpha: 1) ;
+        }
+    }
+}

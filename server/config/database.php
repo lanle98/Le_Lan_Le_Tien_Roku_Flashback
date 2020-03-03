@@ -4,7 +4,7 @@ class Database
     // Note: specify your own database credentials
     private $host = "localhost";
 
-    private $db_name = "db_movies";
+    private $db_name = "db_roku";
 
     private $username = "root";
 
@@ -13,7 +13,8 @@ class Database
     private static $instance = null;
     public $conn;
 
-    private function __construct(){
+    private function __construct()
+    {
         $db_dsn = array(
             'host'    => $this->host,
             'dbname'  => $this->db_name,
@@ -40,8 +41,9 @@ class Database
         }
     }
 
-    public static function getInstance(){
-        if(!self::$instance){
+    public static function getInstance()
+    {
+        if (!self::$instance) {
             self::$instance = new Database();
         }
 

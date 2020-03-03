@@ -1,0 +1,25 @@
+
+
+.sidebar{
+    background: #232323;
+    transition: 1s;
+
+    .user-avatar{
+        img{
+            background: $purple;
+            
+            padding: 1rem;
+            border-radius: 100%;
+            width: 80%;
+        }
+    }
+
+}
+
+.kids{
+    .sidebar{
+        background: $light_yellow;
+        transition: 1s;
+    }
+   
+}

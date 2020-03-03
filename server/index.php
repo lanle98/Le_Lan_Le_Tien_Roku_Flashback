@@ -1,32 +1,47 @@
 <?php
 require_once 'load.php';
 
-if (isset($_GET['filter'])) {
-    $args = array(
-        'tbl' => 'tbl_movies',
-        'tbl2' => 'tbl_genre',
-        'tbl3' => 'tbl_mov_genre',
-        'col' => 'movies_id',
-        'col2' => 'genre_id',
-        'col3' => 'genre_name',
-        'filter' => $_GET['filter']
-    );
-    $getMovies = getMoviesByFilter($args);
+if (isset($_GET['categories'])) {
+
+    if ($_GET['categories'] == 'movie') {
+        $movie_table = 'tbl_movies';
+        $type = $_GET['type'];
+        $getData = getMovies($movie_table, $type);
+    }
+
+    if ($_GET['categories'] == 'music') {
+        $movie_table = 'tbl_music';
+        $type = $_GET['type'];
+        $getData = getMusics($movie_table, $type);
+    }
+
+    if ($_GET['categories'] == 'tv') {
+        $movie_table = 'tbl_television';
+        $type = $_GET['type'];
+        $getData = getTVs($movie_table, $type);
+    }
 } else {
-    $movie_table = 'tbl_movies';
-    $getMovies = getAll($movie_table);
+
+    $getData = getAll('tbl_movies');
 }
 
-$jsonResponse = array('movies' => array());
+
+
+$jsonResponse = array('list' => array());
 $counter = 0;
-while (($row = $getMovies->fetch(PDO::FETCH_ASSOC)) && ($counter < 5)) {
+while (($row = $getData->fetch(PDO::FETCH_ASSOC))) {
+    $category = $_GET['categories'];
     $jsonRow = array(
-        'movies_id' => $row['movies_id'],
-        'movies_cover' => $row['movies_cover'],
-        'movies_title' => $row['movies_title']
+        'id' => $row[$category . "_id"],
+        'cover' => $row[$category . "_poster"],
+        'title' => $row[$category . "_name"],
+        'year' => $row[$category . "_year"],
+        'type' => $row[$category . "_type"]
     );
     $counter++;
-    array_push($jsonResponse['movies'], $jsonRow);
+    array_push($jsonResponse['list'], $jsonRow);
 };
+
+
 
 echo json_encode($jsonResponse);

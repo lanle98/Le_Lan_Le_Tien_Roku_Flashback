@@ -1,0 +1,46 @@
+@import './modules/vars';
+@import './modules/login';
+@import './modules/userSelections';
+@import './modules/home';
+@import './modules/sidebar';
+@import './modules/header';
+@import './modules/nav';
+
+a{
+    opacity: .6;
+
+}
+a:hover{
+    text-decoration: none;
+    opacity: 1;
+    transition: .5s;
+}
+
+
+.wrapper {
+    background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(17,1,36,1) 40%, rgba(34,2,70,1) 100%);
+
+    h1,h2,h3,h4,p,li,a,i{
+        color: $white;
+    }
+    transition: .5s;
+    opacity: 1;
+}
+
+.kids{
+    h1,h2,h3,h4,p,li,a,i{
+        color: $black;
+    }
+    background: $white;
+    transition: .5s;
+    
+}
+
+
+
+
+  
+
+
+
+
