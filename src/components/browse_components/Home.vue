@@ -54,28 +54,38 @@ export default {
           .then(data => (this.movies = data.list))
           .catch(err => console.log(err));
 
-        fetch("/server/?categories=music&type=parents")
+        fetch(
+          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=music&type=parents"
+        )
           .then(res => res.json())
           .then(data => (this.musics = data.list))
           .catch(err => console.log(err));
 
-        fetch("/server/?categories=tv&type=parents")
+        fetch(
+          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=tv&type=parents"
+        )
           .then(res => res.json())
           .then(data => (this.tvshows = data.list))
           .catch(err => console.log(err));
       } else if (user == "kids") {
         this.user = "kids";
-        fetch("/server/?categories=movie&type=kids")
+        fetch(
+          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=movie&type=kids"
+        )
           .then(res => res.json())
           .then(data => (this.movies = data.list))
           .catch(err => console.log(err));
 
-        fetch("/server/?categories=music&type=kids")
+        fetch(
+          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=music&type=kids"
+        )
           .then(res => res.json())
           .then(data => (this.musics = data.list))
           .catch(err => console.log(err));
 
-        fetch("/server/?categories=tv&type=kids")
+        fetch(
+          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=tv&type=kids"
+        )
           .then(res => res.json())
           .then(data => (this.tvshows = data.list))
           .catch(err => console.log(err));
