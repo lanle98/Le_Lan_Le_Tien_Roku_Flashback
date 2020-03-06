@@ -5,7 +5,13 @@
       enter-active-class="animated bounceInLeft"
       leave-active-class="animated bounceOutRight"
     >
-      <Home v-if="status" :userInfo="userInfo" :key="userInfo.name" />
+      <Home
+        v-if="isWatching"
+        @isNotWatching="isNotWatching"
+        :isWatching="isWatching"
+        :userInfo="userInfo"
+        :key="userInfo.name"
+      />
       <UserSelections v-else @userInfo="getUserInfo" :key="2" />
     </transition-group>
   </div>
@@ -19,14 +25,17 @@ export default {
   data() {
     return {
       userInfo: null,
-      status: false
+      isWatching: false
     };
   },
   methods: {
     getUserInfo(info, index) {
       this.userInfo = info[index];
-      this.status = true;
+      this.isWatching = true;
       // window.location.href = "/home?user=" + this.userInfo.authority;
+    },
+    isNotWatching(status) {
+      this.isWatching = status;
     }
   }
 };

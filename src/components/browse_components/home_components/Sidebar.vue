@@ -15,10 +15,10 @@
           <a href="#">My Favorites</a>
         </li>
         <li class="py-3 text-left">
-          <a href="#">Recent Watch</a>
+          <a href="#">Settings</a>
         </li>
         <li class="py-3 text-left">
-          <a href="#">Settings</a>
+          <a href="#" @click="$emit('isNotWatching',false)">Switch</a>
         </li>
         <li class="py-3 text-left">
           <a href="/">Log Out</a>
@@ -30,6 +30,6 @@
 
 <script>
 export default {
-  props: ["user", "info"]
+  props: ["user", "info", "isWatching"]
 };
 </script>

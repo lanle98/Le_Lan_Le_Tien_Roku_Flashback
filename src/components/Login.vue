@@ -42,8 +42,7 @@ export default {
   },
   methods: {
     userLogin() {
-      let url =
-        "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/admin/admin_login.php";
+      let url = "server/admin/admin_login.php";
 
       let formData = new FormData();
 
@@ -58,7 +57,7 @@ export default {
         .then(data => {
           this.message = data;
 
-          if (data === "Login success") {
+          if (data === "Login successful") {
             window.location.href = "/browse";
           }
         })

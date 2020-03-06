@@ -14,6 +14,6 @@ if (!empty($username) && !empty($password)) {
     $message = login($username, $password, $ip);
     echo json_encode($message);
 } else {
-    $message = "error";
+    $message = "Please fill in the required fields";
     echo json_encode($message);
 }

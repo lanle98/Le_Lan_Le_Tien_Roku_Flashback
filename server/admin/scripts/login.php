@@ -1,3 +1,4 @@
+
 <?php
 function login($username, $password, $ip)
 {
@@ -38,12 +39,12 @@ function login($username, $password, $ip)
             );
         }
         if (isset($id)) {
-            return 'Login success';
+            return 'Login successful';
         } else {
             return 'Wrong pass';
         }
     } else {
-        return 'User does not exist!';
+        return 'User does not exist';
     }
 
     //check if match
