@@ -42,8 +42,7 @@ export default {
   },
   methods: {
     userLogin() {
-      let url =
-        "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/admin/admin_login.php";
+      let url = "us-cdbr-iron-east-04.cleardb.net/server/admin/admin_login.php";
 
       let formData = new FormData();
 
