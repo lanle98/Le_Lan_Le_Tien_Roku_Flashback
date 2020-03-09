@@ -48,21 +48,21 @@ export default {
       if (user == "parents") {
         this.user = "parents";
         fetch(
-          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=movie&type=parents"
+          "https://lanle-cms-heroku.herokuapp.com?categories=movie&type=parents"
         )
           .then(res => res.json())
           .then(data => (this.movies = data.list))
           .catch(err => console.log(err));
 
         fetch(
-          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=music&type=parents"
+          "https://lanle-cms-heroku.herokuapp.com?categories=music&type=parents"
         )
           .then(res => res.json())
           .then(data => (this.musics = data.list))
           .catch(err => console.log(err));
 
         fetch(
-          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=tv&type=parents"
+          "https://lanle-cms-heroku.herokuapp.com?categories=tv&type=parents"
         )
           .then(res => res.json())
           .then(data => (this.tvshows = data.list))
@@ -70,22 +70,20 @@ export default {
       } else if (user == "kids") {
         this.user = "kids";
         fetch(
-          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=movie&type=kids"
+          "https://lanle-cms-heroku.herokuapp.com?categories=movie&type=kids"
         )
           .then(res => res.json())
           .then(data => (this.movies = data.list))
           .catch(err => console.log(err));
 
         fetch(
-          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=music&type=kids"
+          "https://lanle-cms-heroku.herokuapp.com?categories=music&type=kids"
         )
           .then(res => res.json())
           .then(data => (this.musics = data.list))
           .catch(err => console.log(err));
 
-        fetch(
-          "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/?categories=tv&type=kids"
-        )
+        fetch("https://lanle-cms-heroku.herokuapp.com?categories=tv&type=kids")
           .then(res => res.json())
           .then(data => (this.tvshows = data.list))
           .catch(err => console.log(err));
