@@ -2,7 +2,7 @@
   <section class="wrapper vh-100 d-flex align-items-center">
     <div class="container user-selections">
       <h2>Who's watching?</h2>
-      <div class="users row m-5 justify-content-center">
+      <div class="users row m-5">
         <div
           class="user-avatar my-3 col-md-3"
           v-for="(user,index) in users"
@@ -24,7 +24,9 @@ export default {
     };
   },
   mounted() {
-    fetch("https://lanle-cms-heroku.herokuapp.com/admin/admin_users.php")
+    fetch(
+      "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/admin/admin_users.php"
+    )
       .then(res => res.json())
       .then(data => (this.users = data.users));
   },
