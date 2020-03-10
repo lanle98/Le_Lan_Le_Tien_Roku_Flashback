@@ -75,7 +75,7 @@ export default {
   methods: {
     createUser() {
       let url =
-        "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/admin/admin_createuser.php";
+        "https://lanle-cms-heroku.herokuapp.com/admin/admin_createuser.php";
 
       let formData = new FormData();
 

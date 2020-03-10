@@ -24,9 +24,7 @@ export default {
     };
   },
   mounted() {
-    fetch(
-      "http://localhost:8888/Le_Lan_Le_Tien_Roku_Flashback/server/admin/admin_users.php"
-    )
+    fetch("https://lanle-cms-heroku.herokuapp.com/admin/admin_users.php")
       .then(res => res.json())
       .then(data => (this.users = data.users));
   },
