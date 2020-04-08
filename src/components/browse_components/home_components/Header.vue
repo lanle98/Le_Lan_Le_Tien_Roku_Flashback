@@ -24,18 +24,18 @@
             <img class="img-fluid" src="images/hero_parents.jpg" alt="hero" />
           </div>
           <div class="swiper-slide">
-            <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
+            <img class="img-fluid" src="images/hero_parents.jpg" alt="hero" />
           </div>
           <div class="swiper-slide">
-            <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
+            <img class="img-fluid" src="images/hero_parents.jpg" alt="hero" />
           </div>
         </div>
 
         <div class="swiper-wrapper" v-if="user == 'kids'">
           <div class="swiper-slide">
-            <img class="img-fluid" src="images/hero_parents.jpg" alt="hero" />
+            <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
           </div>
-          <div class="swiper-slide" v-if="user == 'kids'">
+          <div class="swiper-slide">
             <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
           </div>
           <div class="swiper-slide">
