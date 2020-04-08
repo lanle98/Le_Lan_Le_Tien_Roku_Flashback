@@ -59,7 +59,7 @@ function getTVs($tbl, $type)
     }
 };
 
-function getSingleMovie($tbl, $col, $id)
+function getSingle($tbl, $col, $id)
 {
     //TODO: refer the function above to finish this one
     $pdo = Database::getInstance()->getConnection();

@@ -74,8 +74,7 @@ export default {
 
   methods: {
     createUser() {
-      let url =
-        "https://lanle-cms-heroku.herokuapp.com/admin/admin_createuser.php";
+      let url = "/server/admin/admin_createuser.php";
 
       let formData = new FormData();
 

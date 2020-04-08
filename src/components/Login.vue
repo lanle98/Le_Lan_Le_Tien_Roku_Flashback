@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     userLogin() {
-      let url = "https://lanle-cms-heroku.herokuapp.com/admin/admin_login.php";
+      let url = "server/admin/admin_login.php";
 
       let formData = new FormData();
 

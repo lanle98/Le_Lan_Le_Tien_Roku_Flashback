@@ -8,7 +8,7 @@
       @isNotWatching="$emit('isNotWatching',false)"
     />
     <div class="main col-md-10 p-0">
-      <Header :user="user" @switchType="switchType" />
+      <Header :user="user" :authority="this.$props.userInfo.authority" @switchType="switchType" />
       <Nav />
       <Container :user="user" :musics="musics" :tvshows="tvshows" :movies="movies" />
     </div>
@@ -38,56 +38,48 @@ export default {
   methods: {
     switchType(user) {
       console.log("switched");
-      this.$props.userInfo.authority = user;
+      // this.$props.userInfo.authority = user;
       this.user = user;
-      this.parseData();
+      this.fetchData();
     },
-
-    parseData() {
-      let user = this.$props.userInfo.authority;
-      if (user == "parents") {
-        this.user = "parents";
-        fetch(
-          "https://lanle-cms-heroku.herokuapp.com/?categories=movie&type=parents"
-        )
+    fetchData() {
+      if (this.user == "parents") {
+        fetch("server/?categories=movie&type=parents")
           .then(res => res.json())
           .then(data => (this.movies = data.list))
           .catch(err => console.log(err));
 
-        fetch(
-          "https://lanle-cms-heroku.herokuapp.com/?categories=music&type=parents"
-        )
+        fetch("server/?categories=music&type=parents")
           .then(res => res.json())
           .then(data => (this.musics = data.list))
           .catch(err => console.log(err));
 
-        fetch(
-          "https://lanle-cms-heroku.herokuapp.com/?categories=tv&type=parents"
-        )
+        fetch("server/?categories=tv&type=parents")
           .then(res => res.json())
           .then(data => (this.tvshows = data.list))
           .catch(err => console.log(err));
-      } else if (user == "kids") {
-        this.user = "kids";
-        fetch(
-          "https://lanle-cms-heroku.herokuapp.com/?categories=movie&type=kids"
-        )
+      } else if (this.user == "kids") {
+        fetch("server/?categories=movie&type=kids")
           .then(res => res.json())
           .then(data => (this.movies = data.list))
           .catch(err => console.log(err));
 
-        fetch(
-          "https://lanle-cms-heroku.herokuapp.com/?categories=music&type=kids"
-        )
+        fetch("server/?categories=music&type=kids")
           .then(res => res.json())
           .then(data => (this.musics = data.list))
           .catch(err => console.log(err));
 
-        fetch("https://lanle-cms-heroku.herokuapp.com/?categories=tv&type=kids")
+        fetch("server/?categories=tv&type=kids")
           .then(res => res.json())
           .then(data => (this.tvshows = data.list))
           .catch(err => console.log(err));
       }
+    },
+
+    parseData() {
+      let authority = this.$props.userInfo.authority;
+      this.user = authority;
+      this.fetchData();
     }
   }
 };

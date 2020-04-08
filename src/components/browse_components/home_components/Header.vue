@@ -19,15 +19,28 @@
     <div class="jumbotron p-0">
       <!-- Additional required wrapper -->
       <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-if="user == 'parents'">
+        <div class="swiper-wrapper" v-if="user == 'parents'">
+          <div class="swiper-slide">
+            <img class="img-fluid" src="images/hero_parents.jpg" alt="hero" />
+          </div>
+          <div class="swiper-slide">
+            <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
+          </div>
+          <div class="swiper-slide">
+            <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
+          </div>
+        </div>
+
+        <div class="swiper-wrapper" v-if="user == 'kids'">
+          <div class="swiper-slide">
             <img class="img-fluid" src="images/hero_parents.jpg" alt="hero" />
           </div>
           <div class="swiper-slide" v-if="user == 'kids'">
             <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
           </div>
-          <div class="swiper-slide">slide 2</div>
-          <div class="swiper-slide">slide 3</div>
+          <div class="swiper-slide">
+            <img class="img-fluid" src="images/hero_kids.png" alt="hero" />
+          </div>
         </div>
       </div>
 
@@ -48,7 +61,7 @@ export default {
       index: 0
     };
   },
-  props: ["user"],
+  props: ["user", "authority"],
   methods: {
     buttonPrev() {
       if (this.index <= 2 && this.index > 0) {
@@ -74,7 +87,9 @@ export default {
     },
     switchType(user) {
       console.log(user);
-      this.$emit("switchType", user);
+      if (this.authority !== "kids") {
+        this.$emit("switchType", user);
+      }
     }
   }
 };

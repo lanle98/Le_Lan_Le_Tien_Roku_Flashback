@@ -6,16 +6,9 @@
 @import './modules/sidebar';
 @import './modules/header';
 @import './modules/nav';
+@import './modules/detail';
 
-a{
-    opacity: .6;
 
-}
-a:hover{
-    text-decoration: none;
-    opacity: 1;
-    transition: .5s;
-}
 
 
 .wrapper {

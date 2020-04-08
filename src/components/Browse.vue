@@ -32,7 +32,6 @@ export default {
     getUserInfo(info, index) {
       this.userInfo = info[index];
       this.isWatching = true;
-      // window.location.href = "/home?user=" + this.userInfo.authority;
     },
     isNotWatching(status) {
       this.isWatching = status;

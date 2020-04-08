@@ -24,7 +24,7 @@ export default {
     };
   },
   mounted() {
-    fetch("https://lanle-cms-heroku.herokuapp.com/admin/admin_users.php")
+    fetch("/server/admin/admin_users.php")
       .then(res => res.json())
       .then(data => (this.users = data.users));
   },
