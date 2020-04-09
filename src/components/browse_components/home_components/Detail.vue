@@ -3,8 +3,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content p-5">
         <div v-if="this.$props.detail">
-          <img class="pb-5 cover" :src="'images/'+ detail.cover" />
-          <video preload width="320" height="240" controls>
+          <!-- <img class="pb-5 cover" :src="'images/'+ detail.cover" /> -->
+          <video class="p-3" controls>
             <source :src="'videos/'+detail.link" type="video/mp4" />
           </video>
           <h2>{{detail.title}}</h2>
