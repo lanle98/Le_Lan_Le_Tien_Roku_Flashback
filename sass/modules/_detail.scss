@@ -1,3 +1,18 @@
 .modal-content{
     background: $purple;
+    margin: auto;
+}
+
+.modal-dialog{
+    max-width: 90%;
+}
+
+.content .cover{
+    height: 400px !important;
+    object-position: top;
+}
+
+video{
+    height: 50%;
+    width: 100%;
 }

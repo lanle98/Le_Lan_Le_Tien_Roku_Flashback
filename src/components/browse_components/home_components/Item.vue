@@ -6,6 +6,7 @@
       data-target="#exampleModalCenter"
       @click="$emit('showDetail',item.id,categories)"
       class="movies col-md-2 col-12 p-0"
+      :class="col"
       :key="item.id"
       v-for="item in list"
     >
@@ -19,6 +20,6 @@
 
 <script>
 export default {
-  props: ["list", "name", "categories"]
+  props: ["list", "name", "categories", "col"]
 };
 </script>
