@@ -61,7 +61,8 @@ while (($row = $getData->fetch(PDO::FETCH_ASSOC))) {
         'IMDb' => $row["IMDb"],
         'desc' => $row[$category . "_info"],
         'link' => $row[$category . "_link"],
-        'runtime' => $row[$category . "_runtime"]
+        'runtime' => $row[$category . "_runtime"],
+        'online' => $row[$category . "_online"]
     );
     $counter++;
     array_push($jsonResponse['list'], $jsonRow);
