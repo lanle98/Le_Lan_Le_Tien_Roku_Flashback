@@ -17,7 +17,7 @@ IDP3 - Interactive Media Design
 * Put the project in htdocs folder
 * Create new db in ```PHPMyAdmin``` with the name ```db_roku```
 * Import the database from ```/server/db``` folder
-* In Terminal go ```npm install``` and then ```npm run serve```
+* In Terminal go ```npm run serve```
 * In browser go to ```localhost:8080```
 
 
