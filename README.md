@@ -48,15 +48,7 @@ IDP3 - Interactive Media Design
 
 
 
-
-
-## Acknowledgment/References
-
-* **Pinterest/Dribbble/Google** - *Design inspiration/images* 
-
 ## Future Plans
-* Structure sass files
 * Add more interactivity
-* fix some bootstrap responsive breakpoints and spacing
 * expand the backend system
 
