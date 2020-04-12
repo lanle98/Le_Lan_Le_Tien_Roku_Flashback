@@ -19,6 +19,9 @@ IDP3 - Interactive Media Design
 * Import the database from ```/server/db``` folder
 * In Terminal go ```npm run serve```
 * In browser go to ```localhost:8080```
+* Login account:
+    **username: lanle98
+    **password: 123
 
 
 
